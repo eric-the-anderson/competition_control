@@ -3,13 +3,14 @@
 Este projeto gerencia múltiplas transações simultâneas em um banco de dados, evitando inconsistências e conflitos. Aqui você vai ver na prática como técnicas de controle de concorrência garantem que os dados permaneçam corretos e confiáveis, mesmo em ambientes altamente concorrentes.
 
 # Estrutura do Algoritmo
-
+<p align="center">
 📦 projeto <br>
  ┣ 📂 app <br>
  ┃ ┗ 📜 ... (códigos Flask) <br>
  ┣ 📂 Class <br>
  ┃ ┗ 📜 ... (lógica backend em Python) <br>
  ┗ 📜 main.py <br>
+</p>
 
 <p align="center">
 <img width="460" height="95" alt="image" src="https://github.com/user-attachments/assets/8ac9379c-fb0d-4258-b5d9-eb37a9dfb924" />
