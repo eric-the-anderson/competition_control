@@ -4,12 +4,12 @@ Este projeto gerencia múltiplas transações simultâneas em um banco de dados,
 
 # Estrutura do Algoritmo
 
-📦 projeto
- ┣ 📂 app
- ┃ ┗ 📜 ... (códigos Flask)
- ┣ 📂 Class
- ┃ ┗ 📜 ... (lógica backend em Python)
- ┗ 📜 main.py
+📦 projeto <br>
+ ┣ 📂 app <br>
+ ┃ ┗ 📜 ... (códigos Flask) <br>
+ ┣ 📂 Class <br>
+ ┃ ┗ 📜 ... (lógica backend em Python) <br>
+ ┗ 📜 main.py <br>
 
 <p align="center">
 <img width="460" height="95" alt="image" src="https://github.com/user-attachments/assets/8ac9379c-fb0d-4258-b5d9-eb37a9dfb924" />
