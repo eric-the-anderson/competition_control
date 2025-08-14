@@ -3,29 +3,34 @@
 Este projeto gerencia múltiplas transações simultâneas em um banco de dados, evitando inconsistências e conflitos. Aqui você vai ver na prática como técnicas de controle de concorrência garantem que os dados permaneçam corretos e confiáveis, mesmo em ambientes altamente concorrentes.
 
 # Estrutura do Algoritmo
-<p align="center">
-📦 projeto <br>
- ┣ 📂 app <br>
- ┃ ┗ 📜 ... (códigos Flask) <br>
- ┣ 📂 Class <br>
- ┃ ┗ 📜 ... (lógica backend em Python) <br>
- ┗ 📜 main.py <br>
-</p>
 
 <p align="center">
-<img width="460" height="95" alt="image" src="https://github.com/user-attachments/assets/8ac9379c-fb0d-4258-b5d9-eb37a9dfb924" />
+<img width="377" height="192" alt="image" src="https://github.com/user-attachments/assets/60822029-cd1e-4963-84d1-bea3250dc329" />
 </p>
-O Algoritmo usa Python e Flask para conectar frontend e backend. A pasta app contém as rotas do Flask, a pasta Class guarda a lógica do backend, e o main.py organiza e integra tudo, garantindo que o frontend se comunique com o backend de forma eficiente.<br><br>
+
+Este projeto segue uma arquitetura orientada a objetos e está organizado da seguinte forma: <br>
+
+- app/ – Contém o código do framework Flask, responsável por gerenciar o backend em Python e estabelecer a comunicação com o frontend por meio de rotas.
+- Class/ – Reúne as classes e métodos em Python que compõem a lógica de negócio do backend.
+- main.py – Atua como ponto central do projeto, organizando e integrando os métodos da pasta Class/ com as rotas da pasta app/, estabelecendo assim a conexão entre frontend e backend.
+
 O backend do programa é estruturado da seguinte maneira:
 
 <p align="center">
 <img width="909" height="643" alt="image" src="https://github.com/user-attachments/assets/64e5e19c-5990-4fae-b61a-ea1cea535830" />
 </p>
 
-A classe "Transação" e "DataItemLockManager" 
 # Transação 
 
-Transações
+No algoritmo, as transações são representadas pela classe `Transações`, que armazena:
+
+- **Itens de dados** individuais da transação
+- **Nome da transação**
+- **Lista global** contendo os itens de dados de todas as transações
+- **Lista de transações em estado de encolhimento**
+
+Cada transação mantém seus próprios itens de dados para futuras operações, como write_lock.
+Esses itens são comparados com os itens de dados gerenciados pela classe Data Item Lock Manager para evitar conflitos e corrigir possíveis erros, como no exemplo abaixo:
 
 # Layout da tela
 
