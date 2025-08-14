@@ -6,7 +6,7 @@ Este projeto demonstra como gerenciar múltiplas transações simultâneas em um
 <p align="center">
 <img width="460" height="95" alt="image" src="https://github.com/user-attachments/assets/8ac9379c-fb0d-4258-b5d9-eb37a9dfb924" />
 </p>
-O Algoritmo usa Python e Flask para conectar frontend e backend. A pasta app contém as rotas do Flask, a pasta Class guarda a lógica do backend, e o main.py organiza e integra tudo, garantindo que o frontend se comunique com o backend de forma eficiente.\
+O Algoritmo usa Python e Flask para conectar frontend e backend. A pasta app contém as rotas do Flask, a pasta Class guarda a lógica do backend, e o main.py organiza e integra tudo, garantindo que o frontend se comunique com o backend de forma eficiente.<br/>
 O backend do programa é estruturado da seguinte maneira:
 
 <p align="center">
