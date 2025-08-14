@@ -12,6 +12,12 @@ O backend do programa é estruturado da seguinte maneira:
 <p align="center">
 <img width="909" height="643" alt="image" src="https://github.com/user-attachments/assets/64e5e19c-5990-4fae-b61a-ea1cea535830" />
 </p>
+
+A classe "Transação" e "DataItemLockManager" 
+# Transação 
+
+Transações
+
 # Layout da tela
 
 <p align="center">
