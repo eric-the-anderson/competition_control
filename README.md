@@ -20,7 +20,7 @@ O backend do programa é estruturado da seguinte maneira:
 <img width="909" height="643" alt="image" src="https://github.com/user-attachments/assets/64e5e19c-5990-4fae-b61a-ea1cea535830" />
 </p>
 
-# Transação 
+# 1. Transação 
 
 No algoritmo, as transações são representadas pela classe `Transações`, que armazena:
 
@@ -31,21 +31,38 @@ No algoritmo, as transações são representadas pela classe `Transações`, que
 
 Cada transação mantém seus próprios itens de dados para futuras operações, como write_lock.
 Esses itens são comparados com os itens de dados gerenciados pela classe `Data Item Lock Manager` para evitar conflitos e corrigir possíveis erros, como no exemplo abaixo:
-
+<p align="center">
 <img width="213" height="294" alt="image" src="https://github.com/user-attachments/assets/179d867d-e659-47a3-972a-bdc87d00b79a" />
-
+</p>
 Para facilitar o entendimento: sempre que atualizamos um item de dado em uma transação, essa atualização é refletida tanto na lista de itens da própria transação quanto na classe `Data Item Lock Manager`.
 
 - Se `X` for atualizado, o `X` da `Transação` também será atualizado.
 - Ao mesmo tempo, o `X` em `Data Item Lock Manager` receberá o novo valor.
 
-## Cenário de conflito 
+### Cenário de conflito 
 
 No exemplo da imagem acima, quando a Transação 2 tentar executar um write-item novamente, o sistema irá verificar:
 - Se o valor de `X` na `Transação` for diferente do valor de `X` em `Data Item Lock Manager`, o usuário receberá a seguinte mensagem:
 
 ```text
 Operação não pode ser realizada, o X foi alterado. Para prosseguir, leia o valor atualizado de X na Transação 2.
+```
+
+Esse controle evita que dados desatualizados sobrescrevam informações recentes, garantindo a **consistência** do sistema.
+
+# Data Item Lock Manager
+
+Além de tornar possível que transações só façam operações com itens atualizados, o Data Item Lock Manager é responsável por praticamente todo o correto funcionamento do algoritmo. <br>
+O Data Item Lock Manager possui as seguintes variáveis:
+- **count**: contador para a criação de novas variáveis.
+- **data_items**: items de dados, onde os valores desses itens são sempre o mais recente realizado pelas transações.
+- **lock_register**: registro de locks, guarda apenas registros de write_lock e read_lock 
+- **complete_lock_register**: registro de locks completo: além de guardar os registros de write_lock, read_lock e unlock, guarda read_item, write_item, incremento e decremento, todas as ações são acompanhadas da data e horário em que foram realizadas.
+- **array_position**: posição da lista de item específico, essa variável é utilizada para armazenar uma posição de array para uma determinada consulta que alguma das funções esteja tentando realizar. Geralmente o array_position aponta para um registro de lock específico, essa função será explicada de maneira menos abstrata mais a frente.
+
+# 1. Funções
+
+<img width="1123" height="579" alt="image" src="https://github.com/user-attachments/assets/bb9cc831-6684-435e-b31c-406d2e62ce92" />
 
 # Layout da tela
 
