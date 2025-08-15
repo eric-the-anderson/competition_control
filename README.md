@@ -70,9 +70,9 @@ Tanto o bloqueio exclusivo, como o bloqueio compartilhado, são chamados na **ma
 
 Por meio do encapsulamento de funções, muitas das funções do algoritmo estão sempre chamando outras, é dessa maneira que as validações das regras de bloqueio ocorrem e tornam possível o correto funcionamento no FrontEnd. Na função "write_lock" da imagem anterior, são chamadas outras funções como:
 
--**increment_lock**
--**get_error**: Essa função é responsável por recuperar um erro que tenha acontecido
--**has_exclusive_lock**: Confere se há algum bloqueio exclusivo em um item de dado específico, caso tenha, ele define o valor do item “array_position” da classe, como o número da lista do lock_register onde aquele item está guardado, assim sendo possível acessar informações como: quem está bloqueando um item. 
+- **increment_lock**
+- **get_error**: Essa função é responsável por recuperar um erro que tenha acontecido
+- **has_exclusive_lock**: Confere se há algum bloqueio exclusivo em um item de dado específico, caso tenha, ele define o valor do item “array_position” da classe, como o número da lista do lock_register onde aquele item está guardado, assim sendo possível acessar informações como: quem está bloqueando um item. 
 
 # Layout da tela
 
