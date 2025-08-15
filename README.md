@@ -62,7 +62,17 @@ O Data Item Lock Manager possui as seguintes variáveis:
 
 # 1. Funções
 
+## Lock de modo múltiplo e encolhimento
+
 <img width="1123" height="579" alt="image" src="https://github.com/user-attachments/assets/bb9cc831-6684-435e-b31c-406d2e62ce92" />
+
+Tanto o bloqueio exclusivo, como o bloqueio compartilhado, são chamados na **main** como mostrado no código acima. Após validar se a transação não está em fase de encolhimento, o write_lock da classe “Data Item Lock Manager” é chamado para tentar realizar a ação. Caso a transação esteja em fase de encolhimento, uma mensagem é mostrada no log da interface para o usuário, explicando a impossibilidade de write_lock devido a fase de encolhimento. <br>
+
+Por meio do encapsulamento de funções, muitas das funções do algoritmo estão sempre chamando outras, é dessa maneira que as validações das regras de bloqueio ocorrem e tornam possível o correto funcionamento no FrontEnd. Na função "write_lock" da imagem anterior, são chamadas outras funções como:
+
+-**increment_lock**
+-**get_error**: Essa função é responsável por recuperar um erro que tenha acontecido
+-**has_exclusive_lock**: Confere se há algum bloqueio exclusivo em um item de dado específico, caso tenha, ele define o valor do item “array_position” da classe, como o número da lista do lock_register onde aquele item está guardado, assim sendo possível acessar informações como: quem está bloqueando um item. 
 
 # Layout da tela
 
